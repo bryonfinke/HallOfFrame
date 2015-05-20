@@ -12,7 +12,7 @@
 
 @implementation CustomView
 - (IBAction)onBlueTapped:(UIButton *)sender {
-    
+    [self.delegate customViewCell:self didTapButton:sender];
 }
 
 - (IBAction)onRedTapped:(UIButton *)sender {
@@ -20,7 +20,7 @@
 }
 
 - (IBAction)onGreenTapped:(UIButton *)sender {
-
+    [self.delegate customViewCell:self didTapButton:sender];
 }
 
 

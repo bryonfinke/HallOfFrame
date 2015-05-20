@@ -26,14 +26,19 @@
     [super viewDidLoad];
     Picture *picture1 = [[Picture alloc]init];
     picture1.image = [UIImage imageNamed:@"actor1"];
+    picture1.frameColor = [UIColor lightGrayColor];
     Picture *picture2 = [[Picture alloc]init];
     picture2.image = [UIImage imageNamed:@"actor2"];
+    picture2.frameColor = [UIColor lightGrayColor];
     Picture *picture3 = [[Picture alloc]init];
     picture3.image = [UIImage imageNamed:@"actor3"];
+    picture3.frameColor = [UIColor lightGrayColor];
     Picture *picture4 = [[Picture alloc]init];
     picture4.image = [UIImage imageNamed:@"actor4"];
+    picture4.frameColor = [UIColor lightGrayColor];
     Picture *picture5 = [[Picture alloc]init];
     picture5.image = [UIImage imageNamed:@"actor5"];
+    picture5.frameColor = [UIColor lightGrayColor];
     self.pictures = [NSArray arrayWithObjects:picture1,picture2, picture3, picture4, picture5, nil];
     self.myNib.delegate = self;
     [self.pictureCollectionView reloadData];
@@ -42,6 +47,7 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PictureCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellID" forIndexPath:indexPath];
     cell.pictureImage.image = [[self.pictures objectAtIndex:indexPath.row] image];
+    cell.backgroundColor = [[self.pictures objectAtIndex:indexPath.row] frameColor];
     return cell;
 }
 
@@ -55,7 +61,10 @@
 }
 
 -(void)customViewCell:(id)cell didTapButton:(UIButton *)button {
-    self.pictureCollectionView.backgroundColor = button.backgroundColor;
+    NSIndexPath *selectedIndexPath = [[self.pictureCollectionView indexPathsForSelectedItems]firstObject];
+    Picture *picture = [self.pictures objectAtIndex:selectedIndexPath.row];
+    picture.frameColor = button.backgroundColor;
+    [self.pictureCollectionView reloadData];
 }
 
 @end
