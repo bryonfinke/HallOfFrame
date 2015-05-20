@@ -49,6 +49,9 @@
                                             <constraint firstAttribute="centerY" secondItem="Fri-u1-YTG" secondAttribute="centerY" id="bK9-1j-JU4"/>
                                             <constraint firstAttribute="centerX" secondItem="Fri-u1-YTG" secondAttribute="centerX" id="dAW-4H-ixi"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="pictureImage" destination="Fri-u1-YTG" id="09P-bD-Gem"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
