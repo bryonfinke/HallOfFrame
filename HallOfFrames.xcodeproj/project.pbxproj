@@ -16,6 +16,8 @@
 		7E16287E1B0D063600E461F2 /* HallOfFramesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E16287D1B0D063600E461F2 /* HallOfFramesTests.m */; };
 		7E1628891B0D076E00E461F2 /* PictureCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1628881B0D076E00E461F2 /* PictureCollectionViewCell.m */; };
 		7E16288C1B0D07E100E461F2 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E16288B1B0D07E100E461F2 /* Picture.m */; };
+		F997F58D1B0D15B000689632 /* CustomizationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F997F58C1B0D15B000689632 /* CustomizationView.xib */; };
+		F997F5901B0D15EC00689632 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = F997F58F1B0D15EC00689632 /* CustomView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,9 @@
 		7E1628881B0D076E00E461F2 /* PictureCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureCollectionViewCell.m; sourceTree = "<group>"; };
 		7E16288A1B0D07E100E461F2 /* Picture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Picture.h; sourceTree = "<group>"; };
 		7E16288B1B0D07E100E461F2 /* Picture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Picture.m; sourceTree = "<group>"; };
+		F997F58C1B0D15B000689632 /* CustomizationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomizationView.xib; sourceTree = "<group>"; };
+		F997F58E1B0D15EC00689632 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		F997F58F1B0D15EC00689632 /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +96,9 @@
 				7E1628661B0D063600E461F2 /* AppDelegate.m */,
 				7E1628681B0D063600E461F2 /* ViewController.h */,
 				7E1628691B0D063600E461F2 /* ViewController.m */,
+				F997F58C1B0D15B000689632 /* CustomizationView.xib */,
+				F997F58E1B0D15EC00689632 /* CustomView.h */,
+				F997F58F1B0D15EC00689632 /* CustomView.m */,
 				7E1628871B0D076E00E461F2 /* PictureCollectionViewCell.h */,
 				7E1628881B0D076E00E461F2 /* PictureCollectionViewCell.m */,
 				7E16288A1B0D07E100E461F2 /* Picture.h */,
@@ -211,6 +219,7 @@
 			files = (
 				7E16286D1B0D063600E461F2 /* Main.storyboard in Resources */,
 				7E1628721B0D063600E461F2 /* LaunchScreen.xib in Resources */,
+				F997F58D1B0D15B000689632 /* CustomizationView.xib in Resources */,
 				7E16286F1B0D063600E461F2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,6 +243,7 @@
 				7E1628891B0D076E00E461F2 /* PictureCollectionViewCell.m in Sources */,
 				7E1628671B0D063600E461F2 /* AppDelegate.m in Sources */,
 				7E1628641B0D063600E461F2 /* main.m in Sources */,
+				F997F5901B0D15EC00689632 /* CustomView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +440,7 @@
 				7E1628831B0D063600E461F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E1628841B0D063600E461F2 /* Build configuration list for PBXNativeTarget "HallOfFramesTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +449,7 @@
 				7E1628861B0D063600E461F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
