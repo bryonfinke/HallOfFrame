@@ -14,4 +14,6 @@
 
 @interface PictureCollectionViewCell : UICollectionViewCell
 
+@property (nonatomic, assign) id <PictureCollectionViewCellDelegate> delegate;
+
 @end

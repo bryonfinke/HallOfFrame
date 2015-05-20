@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "PictureCollectionViewCell.h"
 
-@interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegate, PictureCollectionViewCellDelegate>
 
 @end
 
@@ -23,10 +23,11 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PictureCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellID" forIndexPath:indexPath];
     cell.delegate = self;
+    return cell;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 3;
+    return 0;
 }
 
 @end
