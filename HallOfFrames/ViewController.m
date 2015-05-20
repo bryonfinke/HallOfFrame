@@ -8,16 +8,21 @@
 
 #import "ViewController.h"
 #import "PictureCollectionViewCell.h"
+#import "Picture.h"
 
 @interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegate, PictureCollectionViewCellDelegate>
 
+@property NSArray *pictures;
+@property (weak, nonatomic) IBOutlet UICollectionView *pictureCollectionView;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    Picture *picture1 = [[Picture alloc]init];
+    self.pictures = [NSArray arrayWithObjects:picture1, nil];
+    [self.pictureCollectionView reloadData];
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
