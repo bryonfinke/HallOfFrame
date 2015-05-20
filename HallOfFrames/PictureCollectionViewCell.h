@@ -8,14 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol PictureCollectionViewCellDelegate <NSObject>
-
-@end
-
 @interface PictureCollectionViewCell : UICollectionViewCell
 
-@property (nonatomic, assign) id <PictureCollectionViewCellDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIImageView *pictureImage;
-
 
 @end

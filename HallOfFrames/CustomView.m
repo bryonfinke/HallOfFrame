@@ -7,15 +7,21 @@
 //
 
 #import "CustomView.h"
+#import "PictureCollectionViewCell.h"
+#import "ViewController.h"
 
 @implementation CustomView
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (IBAction)onBlueTapped:(UIButton *)sender {
+    
 }
-*/
+
+- (IBAction)onRedTapped:(UIButton *)sender {
+    [self.delegate customViewCell:self didTapButton:sender];
+}
+
+- (IBAction)onGreenTapped:(UIButton *)sender {
+
+}
+
 
 @end

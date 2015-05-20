@@ -9,13 +9,15 @@
 #import "ViewController.h"
 #import "PictureCollectionViewCell.h"
 #import "Picture.h"
+#import "CustomView.h"
 
-@interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegate, PictureCollectionViewCellDelegate>
+@interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegate, CustomViewDelegate>
 
 @property NSArray *pictures;
+@property (weak, nonatomic) IBOutlet CustomView *custView;
+@property NSIndexPath *indexPath;
+@property CustomView *myNib;
 
-
-@property (weak, nonatomic) IBOutlet UICollectionView *pictureCollectionView;
 @end
 
 @implementation ViewController
@@ -24,23 +26,36 @@
     [super viewDidLoad];
     Picture *picture1 = [[Picture alloc]init];
     picture1.image = [UIImage imageNamed:@"actor1"];
-    self.pictures = [NSArray arrayWithObjects:picture1, nil];
+    Picture *picture2 = [[Picture alloc]init];
+    picture2.image = [UIImage imageNamed:@"actor2"];
+    Picture *picture3 = [[Picture alloc]init];
+    picture3.image = [UIImage imageNamed:@"actor3"];
+    Picture *picture4 = [[Picture alloc]init];
+    picture4.image = [UIImage imageNamed:@"actor4"];
+    Picture *picture5 = [[Picture alloc]init];
+    picture5.image = [UIImage imageNamed:@"actor5"];
+    self.pictures = [NSArray arrayWithObjects:picture1,picture2, picture3, picture4, picture5, nil];
+    self.myNib.delegate = self;
     [self.pictureCollectionView reloadData];
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PictureCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellID" forIndexPath:indexPath];
-    cell.delegate = self;
-    cell.pictureImage.image = 
+    cell.pictureImage.image = [[self.pictures objectAtIndex:indexPath.row] image];
     return cell;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 2;
+    return self.pictures.count;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [[[NSBundle mainBundle] loadNibNamed:@"CustomizationView" owner:self options:nil] objectAtIndex:indexPath.row];
+    self.custView = [[[NSBundle mainBundle] loadNibNamed:@"CustomizationView" owner:self options:nil] objectAtIndex:indexPath.row];
+    [self.view addSubview:self.custView];
+}
+
+-(void)customViewCell:(id)cell didTapButton:(UIButton *)button {
+    self.pictureCollectionView.backgroundColor = button.backgroundColor;
 }
 
 @end
