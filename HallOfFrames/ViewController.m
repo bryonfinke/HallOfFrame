@@ -13,6 +13,8 @@
 @interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegate, PictureCollectionViewCellDelegate>
 
 @property NSArray *pictures;
+
+
 @property (weak, nonatomic) IBOutlet UICollectionView *pictureCollectionView;
 @end
 
@@ -21,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     Picture *picture1 = [[Picture alloc]init];
+    picture1.image = [UIImage imageNamed:@"actor1"];
     self.pictures = [NSArray arrayWithObjects:picture1, nil];
     [self.pictureCollectionView reloadData];
 }
@@ -32,7 +35,7 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 0;
+    return 2;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
